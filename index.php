@@ -56,6 +56,41 @@ $hotels = [
 
 <body>
 
+    <div class="container">
+
+        <table class="table table-dark table-striped mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Nome Hotel</th>
+                    <th>Descrizione</th>
+                    <th>Parcheggio</th>
+                    <th>Voto</th>
+                    <th>Distanza dal centro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+
+                foreach ($hotels as $hotel) {
+
+                ?>
+
+                    <tr>
+                        <th scope="row"><?php echo $hotel['name']; ?></th>
+                        <td><?php echo $hotel['description']; ?></td>
+                        <td><?php echo $hotel['parking'] ? 'Si' : 'No'; ?></td>
+                        <td><?php echo $hotel['vote']; ?></td>
+                        <td><?php echo $hotel['distance_to_center'] . ' ' . '<span>Km</span>'; ?></td>
+                    </tr>
+
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+
+    </div>
+
 </body>
 
 </html>
